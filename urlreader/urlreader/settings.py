@@ -54,7 +54,11 @@ ROOT_URLCONF = 'urlreader.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'top/templates'),
+            os.path.join(BASE_DIR, 'results/templates'),
+            os.path.join(BASE_DIR, 'guides/templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
