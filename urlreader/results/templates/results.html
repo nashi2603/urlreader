@@ -1,11 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja-jp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TOP</title>
+    <title>URLReaderによる解析結果 | Results</title>
     <link rel="stylesheet" href="{% static 'results/css/bootstrap.css' %}">
 </head>
 <body>
@@ -14,6 +14,7 @@
     <script src="{% static 'results/js/bootstrap.js' %}"></script>
     <div class="container-fluid p-5">
         <h1>Results!</h1>
+        <p>{{ imgfilename }}</p>
     </div>
 </body>
 </html>

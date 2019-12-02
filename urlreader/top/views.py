@@ -8,18 +8,15 @@ from django.conf import settings
 # Create your views here.
 
 def top(request):
-    # x_value = request.GET.get(key='x', default='0')
-    # y_value = request.GET.get(key='y', default='0')
-    # numbers = int(x_value) + int(y_value)
-    # params = {
-    #     'numbers': numbers,
-    # }
-    print(request.FILES)
+    #print(request.FILES)
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             Handle_Uploaded_File(request.FILES['file'])
-            return HttpResponseRedirect('/results')
+            response = HttpResponseRedirect('/results')
+            response['location'] += '?upload=True'
+            response.set_cookie('imgfilename', value=request.FILES['file'].name, max_age=604800, path='/')
+            return response
     else:
         form = UploadFileForm()
     return render(request, 'top.html', {'form': form})
