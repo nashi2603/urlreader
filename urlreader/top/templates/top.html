@@ -12,16 +12,23 @@
     <script src="{% static 'top/js/jquery-3.3.1.slim.min.js' %}"></script>
     <script src="{% static 'top/js/popper.min.js' %}"></script>
     <script src="{% static 'top/js/bootstrap.js' %}"></script>
-    <div class="container-fluid p-5">
-        <h1>Top!</h1>
-        <p>{{numbers}}</p>
-        <div class="m-5 form-group">
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <!-- <input type="file" class="form-control-file"> -->
-                <button type="submit">アップロード</button>
-            </form>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="./" class="navbar-brand">URLReader</a>
+    </nav>
+    <div class="container-fluid p-3 text-center">
+        <div class="jumbotron">
+            <h1>URLReader</h1>
+            <p>アップロードされた写真などの画像からURLを抽出、一覧にして取得します！</p>
+            <hr class="my-5" />
+            <div class="m-5 form-group">
+                <form method="POST" enctype="multipart/form-data" class="py-5">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">アップロード！</button>
+                </form>
+            </div>
+            <hr class="my-5" />
+            <h3>詳しい使い方や、利用上の注意点などは <a href="/guides"><strong>こちら</strong></a>！</h3>
         </div>
     </div>
 </body>

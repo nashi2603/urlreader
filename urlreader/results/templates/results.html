@@ -12,9 +12,23 @@
     <script src="{% static 'results/js/jquery-3.3.1.slim.min.js' %}"></script>
     <script src="{% static 'results/js/popper.min.js' %}"></script>
     <script src="{% static 'results/js/bootstrap.js' %}"></script>
-    <div class="container-fluid p-5">
-        <h1>Results!</h1>
-        <p>{{ imgfilename }}</p>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="./" class="navbar-brand">URLReader</a>
+    </nav>
+    <div class="container-fluid p-3 text-center">
+        <div class="jumbotron alert alert-success">
+            <h1 class="mt-5">解析結果！</h1>
+            <hr class="my-5" />
+            <div>
+                <h2 class="my-3">URLを検出したテキスト</h2>
+                {{ resultsdata | safe }}
+            </div>
+            <hr class="my-5" />
+            <div>
+                <h2 class="my-3">検出された全てのテキスト</h2>
+                {{ nonresultsdata | safe }}
+            </div>
+        </div>
     </div>
 </body>
 </html>

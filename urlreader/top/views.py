@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
+import os
+
 from .forms import UploadFileForm
 from django.conf import settings
 
@@ -23,6 +25,6 @@ def top(request):
 
 def Handle_Uploaded_File(f):
     BASE_DIR = getattr(settings, "BASE_DIR", None)
-    with open(BASE_DIR + "\\images\\" + f.name, 'wb+') as destination:
+    with open(os.path.join(os.path.join(BASE_DIR, "images"), f.name), 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
