@@ -16,8 +16,12 @@
         <h1>Top!</h1>
         <p>{{numbers}}</p>
         <div class="m-5 form-group">
-            <label>ファイルを選択</label>
-            <input type="file" class="form-control-file">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!-- <input type="file" class="form-control-file"> -->
+                <button type="submit">アップロード</button>
+            </form>
         </div>
     </div>
 </body>
