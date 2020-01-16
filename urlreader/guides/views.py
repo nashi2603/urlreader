@@ -4,4 +4,5 @@ from django.http import HttpResponse
 # Create your views here.
 
 def guides(request):
-    return HttpResponse('guides!')
+    return render(request, 'guides.html')
+
