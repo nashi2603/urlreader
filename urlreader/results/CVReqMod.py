@@ -34,7 +34,10 @@ def DetectStringToJson(api_key, image_filename):
     response = request_ocr(api_key, image_filename)
     if response.status_code == 200:
         alljson = json.loads(response.text)
-        scantext = {'scantext': alljson['responses'][0]['textAnnotations'][0]['description'].splitlines()}
+        try:
+            scantext = {'scantext': alljson['responses'][0]['textAnnotations'][0]['description'].splitlines()}
+        except KeyError:
+            scantext = {'Error': 'text detection error.'}
     else:
         scantext = {'Error': response.status_code}
     return scantext

@@ -3,3 +3,5 @@ urlreader/urlreader/__pycache__/*
 urlreader/top/__pycache__/*
 urlreader/results/__pycache__/*
 urlreader/guides/__pycache__/*
+urlreader/images/*
+urlreader/static/*

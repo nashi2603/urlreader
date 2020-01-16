@@ -25,6 +25,7 @@ def top(request):
 
 def Handle_Uploaded_File(f):
     BASE_DIR = getattr(settings, "BASE_DIR", None)
+    os.makedirs(os.path.join(BASE_DIR, "images"), exist_ok=True)
     with open(os.path.join(os.path.join(BASE_DIR, "images"), f.name), 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
