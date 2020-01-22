@@ -5,3 +5,5 @@ urlreader/results/__pycache__/*
 urlreader/guides/__pycache__/*
 urlreader/images/*
 urlreader/static/*
+urlreader/results/fjb.json
+urlreader/results/fjb-g.json
