@@ -1,0 +1,6 @@
+Django==2.2.7
+requests
+uwsgi
+gspread
+oauth2client
+
