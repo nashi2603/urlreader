@@ -4,7 +4,7 @@ from os.path import join, basename
 from sys import argv
 import json
 import requests
-from . import alexa
+import alexa, idgen
 
 ENDPOINT_URL = 'https://vision.googleapis.com/v1/images:annotate'
 RESULTS_DIR = 'jsons'
@@ -42,7 +42,7 @@ def DetectStringToJson(api_key, image_filename):
     else:
         scantext = {'Error': response.status_code}
     msg = scantext
-    alexa.add_into_data(1,msg)
+    alexa.add_into_data(idgen.makeid(),msg)
     return scantext
 
 # 以下動作テスト用
