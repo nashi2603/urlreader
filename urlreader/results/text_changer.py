@@ -11,5 +11,3 @@ def changer(text):
     i = i.replace(']' , '')
 
     return i
-
-# print(changer(text))
